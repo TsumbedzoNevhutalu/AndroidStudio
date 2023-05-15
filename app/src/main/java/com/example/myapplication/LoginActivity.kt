@@ -20,10 +20,12 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
 //initialize and binding with the api
         etUsername = findViewById(R.id.etUserName)
         etPassword = findViewById(R.id.etPassword)
         btnLogin = findViewById(R.id.btnLogin)
+
 
 //adding functionality to the login button
         btnLogin.setOnClickListener(){
@@ -69,12 +71,11 @@ class LoginActivity : AppCompatActivity() {
                         Toast.LENGTH_LONG
                     ).show()
                     //directing the app where to go from the recent activity
-                    startActivity(Intent(this@LoginActivity, DashboardActivity::class.java))
+                    startActivity(intent)
                 } else {
                     Toast.makeText(this@LoginActivity, "User does not exists!", Toast.LENGTH_LONG)
                         .show()
                 }
-
 
             }
 
